@@ -1,3 +1,8 @@
-<div *ngIf="mostrarSaludo">
+<div *ngIf="mostrarSaludo" [ngClass]="color">
   <p>¡Hola, {{ nombre }}!</p>
+</div>
+
+<div>
+  <button (click)="cambiarColor('rojo')">Rojo</button>
+  <button (click)="cambiarColor('verde')">Verde</button>
 </div>

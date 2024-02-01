@@ -7,5 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class SaludoComponent {
   @Input() mostrarSaludo: boolean = true;
- nombre: string = "Sol"
+ nombre: string = "Sol";
+ color: string = ''
+
+ cambiarColor(nuevoColor: string): void {
+  this.color = nuevoColor;
+}
 }
