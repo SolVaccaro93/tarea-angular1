@@ -1,11 +1,15 @@
-<div *ngIf="mostrarSaludo" [ngClass]="color">
-  <p>¡Hola, {{ nombre |upper}}!</p>
-</div>
+<div class="text-center mt-5 card" style="width: 35rem; height:250px">
+  <div *ngIf="mostrarSaludo" [ngClass]="color">
+    <h1>¡Hola, {{ nombre |upper}}!</h1>
+  </div>
+  <div>
 
-<div>
-  <button (click)="cambiarColor('rojo')">Rojo</button>
-  <button (click)="cambiarColor('verde')">Verde</button>
+    <div class="mt-4">
+      <button class="btn btn-danger mx-2" (click)="cambiarColor('rojo')">Rojo</button>
+      <button class="btn btn-success mx-2" (click)="cambiarColor('verde')">Verde</button>
 
-  <button (click)="ocultarSaludo()">Ocultar Saludo</button>
-  <button (click)="irDespedida()">Despedirse</button>
-</div>
+      <button class="btn btn-secondary mx-2" (click)="ocultarSaludo()">Ocultar Saludo</button>
+      <button class="btn btn-primary mx-2" (click)="mostrarMensajeSaludo()">Mostrar Saludo</button>
+    </div>
+      <button class="btn btn-info mx-2 mt-5" (click)="irDespedida()">Despedirse</button>
+    </div>

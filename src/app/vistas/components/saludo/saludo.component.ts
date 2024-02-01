@@ -24,6 +24,11 @@ export class SaludoComponent {
     this.mostrarSaludoChange.emit(this.mostrarSaludo);
   }
 
+  mostrarMensajeSaludo(): void {
+    this.mostrarSaludo = true; // Cambia el valor de mostrarSaludo a true
+    this.mostrarSaludoChange.emit(this.mostrarSaludo);
+  }
+
   irDespedida(): void {
     // Utiliza this.router para navegar a la ruta 'despedida'
     this.router.navigate(['/despedida', this.nombre]);
