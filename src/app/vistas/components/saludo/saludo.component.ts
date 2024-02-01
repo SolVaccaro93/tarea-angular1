@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-saludo',
@@ -7,10 +7,15 @@ import { Component, Input } from '@angular/core';
 })
 export class SaludoComponent {
   @Input() mostrarSaludo: boolean = true;
+  @Output() mostrarSaludoChange: EventEmitter<boolean> = new EventEmitter<boolean>();
  nombre: string = "Sol";
  color: string = ''
 
  cambiarColor(nuevoColor: string): void {
   this.color = nuevoColor;
+}
+ocultarSaludo(): void {
+  this.mostrarSaludo = false;
+  this.mostrarSaludoChange.emit(this.mostrarSaludo);
 }
 }
