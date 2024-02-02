@@ -6,7 +6,7 @@ import { DespedidaComponent } from './vistas/components/despedida/despedida.comp
 const routes: Routes = [
   { path: 'saludo', component: MainPageComponent },
   { path: 'despedida/:nombre', component: DespedidaComponent },
-  { path: '**', redirectTo: '/saludo', pathMatch: 'full' }
+  { path: '**', redirectTo: 'saludo', pathMatch: 'full' }
 ];
 
 @NgModule({

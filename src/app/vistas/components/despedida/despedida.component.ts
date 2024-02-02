@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-despedida',
@@ -11,13 +11,16 @@ import { map } from 'rxjs';
 export class DespedidaComponent implements OnInit {
   nombre: string = "";
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.
      pipe(
-       map(params => {
-        this.nombre = params['nombre']
+       tap(() => {
+        let partial  = this.router.url.split('/')
+        this.nombre =  partial[partial.length -1];
+
+
        })
      ).subscribe()
 
